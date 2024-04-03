@@ -33,7 +33,7 @@
                                 <td>
                                     <a href="{{ url('/restore') }}/{{ $category->id }}" class="btn btn-outline-success">Restore</a>
                                     <a href="{{ url('/delete-category') }}/{{ $category->id }}"
-                                        class="btn btn-outline-danger">Delete</a>
+                                        class="btn btn-outline-danger">P Delete</a>
                                 </td>
                             </tr>
                             @endforeach

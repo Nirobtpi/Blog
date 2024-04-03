@@ -21,18 +21,20 @@
                         <thead>
                             <tr>
                                 <th scope="col">Sl</th>
+                                <th scope="col">Sub Category Name</th>
                                 <th scope="col">Category Name</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $key=>$category)
+                            @foreach ($subCategory as $key=>$category)
                             <tr>
-                                <th scope="row">{{ $categories->firstItem()+ $key }}</th>
-                                <td>{{ $category->category_name }}</td>
+                                <th scope="row">{{ $subCategory->firstItem()+ $key }}</th>
+                                <td>{{ $category->sub_category_name }}</td>
+                                <td>{{ $category->get_category_name->category_name }}</td>
                                 <td>
-                                    <a href="{{ url('/edit-category') }}/{{ $category->id }}" class="btn btn-outline-success">Edit</a>
-                                    <a href="{{ url('/delete-category') }}/{{ $category->id }}"
+                                    <a href="{{ url('/restore') }}/{{ $category->id }}" class="btn btn-outline-success">Restore</a>
+                                    <a href="{{ url('/delete') }}/{{ $category->id }}"
                                         class="btn btn-outline-danger">Delete</a>
                                 </td>
                             </tr>
@@ -40,7 +42,7 @@
 
                         </tbody>
                     </table>
-                    {{ $categories->links() }}
+                    {{ $subCategory->links() }}
                     <!-- End Table with stripped rows -->
 
                 </div>

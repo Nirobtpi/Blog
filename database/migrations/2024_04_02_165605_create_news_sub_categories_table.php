@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('news_sub_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('sub_category_name');
+            $table->bigInteger('category_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

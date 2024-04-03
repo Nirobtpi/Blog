@@ -13,13 +13,14 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
-                    <h5 class="card-title">Add News Category</h5>
+                    <h5 class="card-title">Edit News Category</h5>
                     <!-- Floating Labels Form -->
-                    <form class="row g-3" action="{{ url('/add-category') }}" method="POST">
+                    <form class="row g-3" action="{{ url('/edit-category') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="category_id" value="{{ $getValue->id }}">
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control @error('category_name') id in-valid
+                                <input type="text" value="{{ $getValue->category_name }}" class="form-control @error('category_name') id in-valid
                         
                     @enderror" name="category_name" id="category_name" placeholder="Category Name">
                                 <label for="category_name">News Category Name</label>

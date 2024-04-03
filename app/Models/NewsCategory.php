@@ -14,6 +14,7 @@ class NewsCategory extends Model
     public $fillable=[
         'category_name',
         'created_at',
+        'updated_at',
     ];
     // public $guard=[
         
