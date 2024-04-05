@@ -32,7 +32,7 @@
                                 <td>{{ $category->category_name }}</td>
                                 <td>
                                     <a href="{{ url('/restore') }}/{{ $category->id }}" class="btn btn-outline-success">Restore</a>
-                                    <a href="{{ url('/delete-category') }}/{{ $category->id }}"
+                                    <a href="{{ url('/delete-pcategory') }}/{{ $category->id }}"
                                         class="btn btn-outline-danger">P Delete</a>
                                 </td>
                             </tr>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsCategoryController;
 use App\Http\Controllers\NewsSubCategoryController;
 use App\Http\Controllers\NewsSubCategoryCon;
+use App\Http\Controllers\CreateNewsController;
 
 
 /*
@@ -33,15 +34,21 @@ Route::get('/deleted-category-view',[NewsCategoryController::class,'deleteCatego
 Route::get('/edit-category/{id}',[NewsCategoryController::class,'editCategoryurl']);
 Route::post('/edit-category',[NewsCategoryController::class,'editCategory']);
 Route::get('/restore/{id}',[NewsCategoryController::class,'restore']);
-Route::get('/delete-category/{id}',[NewsCategoryController::class,'permanentDelete']);
+Route::get('/delete-pcategory/{id}',[NewsCategoryController::class,'permanentDelete']);
 // Route::resource('/sub-category',NewsSubCategoryController::class);
 
 // Sub Category Route  
 Route::get('/add-sub-categoryurl',[NewsSubCategoryCon::class,'index']);
 Route::post('/add-sub-category',[NewsSubCategoryCon::class,'store']);
 Route::get('/view-sub-category',[NewsSubCategoryCon::class,'view']);
-Route::get('/delete/{id}',[NewsSubCategoryCon::class,'delete']);
+Route::get('/soft-delete/{id}',[NewsSubCategoryCon::class,'delete']);
 Route::get('/delete-data-view',[NewsSubCategoryCon::class,'deletedDataView']);
 Route::get('/restore/{id}',[NewsSubCategoryCon::class,'restore']);
 Route::get('/delete/{id}',[NewsSubCategoryCon::class,'permanentDelete']);
 Route::get('/update/{id}',[NewsSubCategoryCon::class,'updateUrl']);
+Route::post('/update-sub-category',[NewsSubCategoryCon::class,'updateSubCategory']);
+
+
+// news added route 
+Route::get('/add-news',[CreateNewsController::class,'index']);
+Route::post('/add-news-item',[CreateNewsController::class,'create']);

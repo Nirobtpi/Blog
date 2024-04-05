@@ -34,7 +34,7 @@
                                 <td>{{ $category->get_category_name->category_name }}</td>
                                 <td>
                                     <a href="{{ url('/update') }}/{{ $category->id }}" class="btn btn-outline-success">Edit</a>
-                                    <a href="{{ url('/delete') }}/{{ $category->id }}"
+                                    <a href="{{ url('/soft-delete') }}/{{ $category->id }}"
                                         class="btn btn-outline-danger">Delete</a>
                                 </td>
                             </tr>

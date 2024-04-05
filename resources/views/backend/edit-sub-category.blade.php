@@ -7,7 +7,7 @@
         <div class="col-lg-8 offset-2">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Add Sub Category</h5>
+                    <h5 class="card-title">Edit Sub Category</h5>
                     @if (session('success'))
                     <div class="alert alert-primary alert-dismissible fade show" role="alert">
                         {{ session('success') }}
@@ -16,8 +16,9 @@
                     @endif
 
                     <!-- Vertical Form -->
-                    <form class="row g-3" action="{{ url('/add-sub-category') }}" method="post">
+                    <form class="row g-3" action="{{ url('/update-sub-category') }}" method="post">
                         @csrf
+                        <input type="hidden" name="sub_category_id" value="{{ $data->id }}">
                         <div class="col-12">
                             <label for="inputNanme4" class="form-label">Sub Category Name</label>
                             <input type="text" value="{{ $data->sub_category_name }}" name="sub_category_name" class="form-control @error('sub_category_name') is in-valid
