@@ -5,7 +5,7 @@ use App\Http\Controllers\NewsCategoryController;
 use App\Http\Controllers\NewsSubCategoryController;
 use App\Http\Controllers\NewsSubCategoryCon;
 use App\Http\Controllers\CreateNewsController;
-
+use App\Http\Controllers\frontEndController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,9 @@ use App\Http\Controllers\CreateNewsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/admin', function(){
     return view('backend.dashboard');
@@ -52,3 +52,16 @@ Route::post('/update-sub-category',[NewsSubCategoryCon::class,'updateSubCategory
 // news added route 
 Route::get('/add-news',[CreateNewsController::class,'index']);
 Route::post('/add-news-item',[CreateNewsController::class,'create']);
+Route::get('/view-news',[CreateNewsController::class,'view']);
+Route::get('/admin/news-delete/{id}',[CreateNewsController::class,'deleteNews']);
+Route::get('/admin/deleted-news-view',[CreateNewsController::class,'deletedNewsView']);
+Route::get('/admin/deleted-news-restore/{id}',[CreateNewsController::class,'restore']);
+Route::get('/admin/force-deleted-news/{id}',[CreateNewsController::class,'forceDeleteNews']);
+Route::get('/admin/edit-news/{id}',[CreateNewsController::class,'editUrl']);
+Route::post('/edit-news',[CreateNewsController::class,'edit']);
+
+Route::get('/frontend', function () {
+    return view('frontend.index');
+});
+// Route::get('/frontend',[frontEndController::class,'fornend']);
+// Route::get('/frontend',[frontEndController::class,'fornendData']);

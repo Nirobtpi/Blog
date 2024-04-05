@@ -346,12 +346,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ url('/view-news') }}">
                             <i class="bi bi-circle"></i><span>View News</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ url('/admin/deleted-news-view') }}">
                             <i class="bi bi-circle"></i><span>View Deleted News</span>
                         </a>
                     </li>
