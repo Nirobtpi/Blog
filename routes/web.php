@@ -60,8 +60,11 @@ Route::get('/admin/force-deleted-news/{id}',[CreateNewsController::class,'forceD
 Route::get('/admin/edit-news/{id}',[CreateNewsController::class,'editUrl']);
 Route::post('/edit-news',[CreateNewsController::class,'edit']);
 
-Route::get('/frontend', function () {
-    return view('frontend.index');
-});
+// Route::get('/frontend', function () {
+//     return view('frontend.index');
+// });
 // Route::get('/frontend',[frontEndController::class,'fornend']);
-// Route::get('/frontend',[frontEndController::class,'fornendData']);
+Route::get('/',[frontEndController::class,'fornendData']);
+Route::get('/{slug}/{id}',[frontEndController::class,'singleNews']);
+Route::get('/category/{name}/{category_id}',[frontEndController::class,'category_link']);
+Route::get('/sub-category/{sbu_category_name}/{sub_category_id}',[frontEndController::class,'getSubCategory']);

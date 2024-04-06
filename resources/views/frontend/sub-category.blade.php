@@ -21,16 +21,11 @@
 
         <div class="container">
             <div class="row">
+                <h1>{{ $subCat->sub_category_name }}</h1>
                 <div class="category mb-4">
-                    @foreach ($categories as $category)
-                         <a class="text-info" href="{{ url('/category') }}/{{ $category->category_name }}/{{ $category->id }}">{{ $category->category_name }}</a>&nbsp;&nbsp;
-                    @endforeach
-                   
-                </div>
-                <div class="category mb-4">
-                    @foreach ($subCat as $sub)
-                         <a class="text-danger" href="{{ url('/sub-category') }}/{{ $sub->sub_category_name }}/{{ $sub->id }}">{{ $sub->sub_category_name }}</a>&nbsp;&nbsp;
-                    @endforeach
+                    {{-- @foreach ($categories as $category)
+                         <a class="text-info" href="{{ url('') }}/{{ $category->category_name }}/{{ $category->id }}">{{ $category->category_name }}</a>&nbsp;&nbsp;
+                    @endforeach --}}
                    
                 </div>
                 @foreach ($all as $one)
